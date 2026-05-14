@@ -1,0 +1,10 @@
+-- Write your query below
+SELECT SALE_DATE, SUM(
+    CASE    
+        WHEN UPPER(FRUIT) = 'ORANGES' THEN SOLD_NUM * -1
+        ELSE SOLD_NUM
+    END
+) AS DIFF
+FROM SALES S
+GROUP BY SALE_DATE
+;
