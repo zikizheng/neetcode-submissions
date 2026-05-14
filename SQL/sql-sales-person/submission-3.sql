@@ -1,0 +1,13 @@
+-- Write your query below
+SELECT NAME
+FROM SALES_PERSON
+WHERE SALES_ID NOT IN (
+    SELECT SALES_ID
+    FROM ORDERS O
+    WHERE COM_ID = (
+        SELECT COM_ID
+        FROM COMPANY
+        WHERE NAME = 'CRIMSON'
+    )       
+)
+;
